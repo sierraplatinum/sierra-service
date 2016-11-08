@@ -1,0 +1,9 @@
+# sSMTP aliases
+# 
+# Format:	local_account:outgoing_address:mailhub
+#
+# Example: root:your_login@your.domain:mailhub.your.domain[:port]
+# where [:port] is an optional port number that defaults to 25.
+root:sierra-service@bioinf.uni-leipzig.de:bierdepot.bioinf.uni-leipzig.de:587
+core:sierra-service@bioinf.uni-leipzig.de:bierdepot.bioinf.uni-leipzig.de:587
+

@@ -1,0 +1,2 @@
+sh /config/clean.sh &
+
