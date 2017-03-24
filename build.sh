@@ -40,7 +40,7 @@ read threads
 
 ports=$(expr $ePort - $sPort);
 max=$(expr $maxServer \* 2);
-if (("$ports" <  "$max"))
+if (("$ports" <  "$maxServer"))
 then {
 echo $ports;
 echo $max;

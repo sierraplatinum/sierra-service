@@ -1,19 +1,3 @@
-// **
-// *****************************************************************************
-// * Copyright (c) 2016 Daniel Gerighausen, Lydia Mueller
-// *
-// * Licensed under the Apache License, Version 2.0 (the "License");
-// * you may not use this file except in compliance with the License.
-// * You may obtain a copy of the License at
-// *
-// * http://www.apache.org/licenses/LICENSE-2.0
-// *
-// * Unless required by applicable law or agreed to in writing, software
-// * distributed under the License is distributed on an "AS IS" BASIS,
-// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// * See the License for the specific language governing permissions and
-// * limitations under the License.
-// ******************************************************************************
 <?php include("header.php");  ?>
 <article  style="position: absolute; left: 10%;width: 500px"><div style="position: fixed; align: center; display: block; border: 1px solid rgb(204, 204, 204); margin: 0 auto; width: 500px"><div style="padding: 10px; font-size: 12px; line-height: 16px; text-align: justify; font-family: Helvetica, Arial, FreeSans, sans-serif; color: #6e6e6e; word-break: normal;">
 	<?php
@@ -25,7 +9,7 @@
 	if(!empty($row))
 	{
 	$hash = $row["hash"];
-	echo "Hash found!";
+	//echo "Hash found!";
 	$notifyEmail = $row["email"];
 	echo $notifyEmail;
 	$db->query("insert into user (password,email) values (hex(randomblob(8)),'$notifyEmail')");

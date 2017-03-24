@@ -1,24 +1,7 @@
-// **
-// *****************************************************************************
-// * Copyright (c) 2016 Daniel Gerighausen, Lydia Mueller
-// *
-// * Licensed under the Apache License, Version 2.0 (the "License");
-// * you may not use this file except in compliance with the License.
-// * You may obtain a copy of the License at
-// *
-// * http://www.apache.org/licenses/LICENSE-2.0
-// *
-// * Unless required by applicable law or agreed to in writing, software
-// * distributed under the License is distributed on an "AS IS" BASIS,
-// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// * See the License for the specific language governing permissions and
-// * limitations under the License.
-// ******************************************************************************
-
 <?php
 
 function findPort($db){
-	for($port = 20000; $port <= 20020; $port++){
+	for($port = 50000; $port <= 50010; $port++){
 		$res = $db->query("Select count(*) as num from user where running='true' and port='$port'");
 		$row = $res->fetchArray();
 		if($row['num'] == 0){
@@ -28,7 +11,7 @@ function findPort($db){
 }
 
 function findFTPPort($db){
-	for($port = 10000; $port <= 10010; $port++){
+	for($port = 20000; $port <= 20010; $port++){
                 $res = $db->query("Select count(*) as num from user where running='true' and ftpPort='$port'");
                 $row = $res->fetchArray();
                 if($row['num'] == 0){
@@ -43,9 +26,9 @@ function startServers(){
 	$cmd = "sh $webserviceHome/cleanup.sh";
 	shell_exec(sprintf('%s > /dev/null 2>&1', $cmd));
 
-	$maxServer = 3;
-	$cores = 6;
-	$portRange = "20000-20020";
+	$maxServer = 10;
+	$cores = 10;
+	$portRange = "50000-50010";
 
 	$db = new SQLite3("$webserviceHome/userdb.db");
 
