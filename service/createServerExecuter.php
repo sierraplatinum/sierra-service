@@ -57,7 +57,7 @@ function startServers(){
 		$startTime=time();
 		$db->exec("update user set pid='$pid',port='$port',ftpPort='$ftpPort',server='$server',running='true',started='$startTime' where ID=$jobname;");
 		#echo "update user set pid=$pid,port=$port,ftpPort=$ftpPort,server='$server',running='true',started=strftime('%s',datetime()) where ID=$jobname";
-		$message = "Dear Sierra Service User,\n\nyour server is running. You can log-in using the log-in credentials below.\njob name: $jobname\npassword: $password\nserver: $server\nport: $port\nFTP port: $ftpPort\n\nThanks for using Sierra Service!\n\nBest regards,\nSierra Platinum Service Team";
+		$message = "Dear Sierra Service User,\n\nyour server is running. You can log-in using the log-in credentials below.\nserver: $server\nport: $port\nuser: $jobname\npassword: $password\nFTP port: $ftpPort\n\nThanks for using Sierra Service!\n\nBest regards,\nSierra Platinum Service Team";
 		mail($email,"Your Sierra Server is running",$message,"From: Sierra Platinum Service <sierra-service@seneca.informatik.uni-leipzig.de>", "-f sierra-service@seneca.informatik.uni-leipzig.de");
 		#echo $message;
 		$activeServers++;
